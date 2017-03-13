@@ -64,9 +64,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		       </c:when>
 		       <c:otherwise>
 		         <c:out value="${user.username}"></c:out>欢迎您!
+		         <a href="song/song_showSong">显示所有歌曲</a>
 		       </c:otherwise>
 		    </c:choose>
-   <a href="song/song_showSong">显示所有歌曲</a>
+   
   </div>
   </body>
 </html>
