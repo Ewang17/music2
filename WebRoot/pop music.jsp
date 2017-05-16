@@ -16,6 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
     <link type="text/css"rel="stylesheet"href="css/style1.css">
+    <link rel="shortcut icon" href="<%=basePath %>images/logo.png">
 
 <body>
 <div id="box_absolute7">
@@ -71,9 +72,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <td><a href="song/song_deleteSong?song.songid=${song.songid}">删除</a></td>
     </c:when>
     </c:choose>
+    <td><audio controls >
+	        <source src="${song.filepath}" type="${song.contentType}"></source>
+        </audio>
+    </td>
     </tr>
     </c:forEach>
-    <tr><a href="song/song_showAdd">添加音乐</a></tr>
+    <tr><a href="song/song_showAdd">添加音乐</a>&nbsp;&nbsp;<a href="song/song_showSong">显示所有歌曲</a>&nbsp;&nbsp;<a href="singer/singer_showSinger">查看所有歌手</a></tr>
     </table>
  </s:form>
 </div>

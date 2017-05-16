@@ -4,6 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+     <constant name="struts.multipart.maxSize" value="30000000"/>    
      <constant name="struts.i18n.encoding" value="utf-8"/>
      <constant name="struts.devMode" value="true" />
      <!--Struts2中Action对象的创建交给spring完成-->
@@ -30,11 +31,24 @@
 	     <default-interceptor-ref name="myInterceptors"></default-interceptor-ref>
 	     <!-- 适用于所有的action -->
 	     <global-results>
-	          <result name="login" type="redirect">/login.jsp</result>
 	          <result name="success" type="redirect">${prePage}</result> 
+	          <result name="index" type="redirect" >/index.jsp</result>
+	          <result name="login" type="redirect">/login.jsp</result>
 	     </global-results>
+	     
+	     
      </package>
-       
+     <package name="singer" namespace="/singer" extends="default">
+	        <action name="singer_*" class="singerAction" method="{1}">
+	        <result name="show_singers">/showSingers.jsp</result>
+	        <result name="message_singer">/message_singer.jsp</result>
+	        <result name="addSinger">/addSinger.jsp</result>
+	        <result name="detail_singer">/detail_singer.jsp</result>
+	        <result name="edit_singer">/edit_singer.jsp</result>
+	        <result name="edit_singer_message">/edit_singer_message.jsp</result>
+	        <result name="delete_singer">/delete_singer.jsp</result>
+	        </action>
+	 </package>  
      <package name="song" namespace="/song" extends="default">
 	        <action name="song_*" class="songAction" method="{1}">
 	        	<result name="message">/message.jsp</result>
@@ -59,9 +73,11 @@
                   <param name="param1">${user.username}</param>
                 </result>
                 <result name="login_message">/index.jsp</result>
-                <result name="input">/login.jsp</result>
+                <result name="input">/reg.jsp</result>
 	        </action>  
+
+	       
 	 </package>
-          
+      
 	 	 
 </struts>

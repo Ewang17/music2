@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link href="css/style1.css"rel="stylesheet"type="text/css">
+	<link rel="shortcut icon" href="<%=basePath %>images/logo.png">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->  
@@ -57,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <tr>
     <td><c:out value="${status.index+1}"></c:out></td>
     <td><a href="song/song_showDetail?song.songid=${song.songid}"><c:out value="${song.name}"></c:out></a></td>
-    <td><c:out value="${song.singer.singername}"></c:out></td>
+    <td><a href="singer/singer_showDetail?singer.singerid=${song.singer.singerid}"><c:out value="${song.singer.singername}"></c:out></td>
     <td><a href="song/song_showEdit?song.songid=${song.songid}">编辑</a></td>
     <td><a href="song/song_deleteSong?song.songid=${song.songid}">删除</a></td>
     </tr>

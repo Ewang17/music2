@@ -22,5 +22,11 @@
         <property name="name" type="java.lang.String">
             <column name="name" length="40" not-null="true" />
         </property>
+        <property name="filepath" type="java.lang.String">
+            <column name="filepath" length="50" />
+        </property>
+        <property name="contentType" type="java.lang.String">
+            <column name="contentType" length="20" />
+        </property>
     </class>
 </hibernate-mapping>

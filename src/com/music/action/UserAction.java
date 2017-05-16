@@ -93,9 +93,13 @@ public class UserAction extends ActionSupport implements SessionAware{
 			
 			session.put("user", db_user);
 			prePage = (String) session.get("prePage");
-			System.out.println("将要跳到："+ prePage );
-			session.remove("prePage");  
-			return "success";
+            if(prePage!=null){
+            	System.out.println("将要跳到："+ prePage );
+    			session.remove("prePage");  
+    			return "success";
+			}
+			System.out.println("将要跳到：首页" );  
+			return "index";
 			
 		    }
 		}

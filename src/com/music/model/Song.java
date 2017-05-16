@@ -13,6 +13,8 @@ public class Song implements java.io.Serializable {
 	private Genre genre;
 	private Singer singer;
 	private String name;
+	private String filepath;
+	private String contentType;
 
 	// Constructors
 
@@ -27,11 +29,14 @@ public class Song implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Song(Album album, Genre genre, Singer singer, String name) {
+	public Song(Album album, Genre genre, Singer singer, String name,
+			String filepath, String contentType) {
 		this.album = album;
 		this.genre = genre;
 		this.singer = singer;
 		this.name = name;
+		this.filepath = filepath;
+		this.contentType = contentType;
 	}
 
 	// Property accessors
@@ -74,6 +79,22 @@ public class Song implements java.io.Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getFilepath() {
+		return this.filepath;
+	}
+
+	public void setFilepath(String filepath) {
+		this.filepath = filepath;
+	}
+
+	public String getContentType() {
+		return this.contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
 	}
 
 }

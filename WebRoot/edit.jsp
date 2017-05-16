@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link href="css/style1.css"rel="stylesheet"type="text/css">
+	<link rel="shortcut icon" href="<%=basePath %>images/logo.png">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -50,12 +51,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </ul>
 </nav>
 </header>
-    <s:form action="song/song_editSong" method="post">
+    <s:form action="song/song_editSong" enctype="multipart/form-data" method="post">
     <s:hidden name="song.songid"></s:hidden>
-    <s:textfield name="song.name" label="歌曲名称"></s:textfield>
+    <p><s:textfield name="song.name" label="歌曲名称"></s:textfield>
     <s:textfield name="song.singer.singername" label="演唱歌手"></s:textfield>
     <s:textfield name="song.album.albumname" label="所属专辑"></s:textfield>
     <s:textfield name="song.genre.genrename" label="歌曲流派"></s:textfield>  
+    <s:file name="songpath" label="歌曲路径"></s:file></p>
+    <p>歌曲当前路径: <c:out value="${song.filepath}"></c:out></p>
     <s:submit value="提交"></s:submit>
     </s:form>
   </div>

@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link href="css/style1.css"rel="stylesheet"type="text/css">
+	<link rel="shortcut icon" href="<%=basePath %>images/logo.png">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->  
@@ -40,6 +41,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <p>演唱歌手: <c:out value="${song.singer.singername}"></c:out></p>
     <p>所属专辑: <c:out value="${song.album.albumname}"></c:out></p>
     <p>歌曲流派: <c:out value="${song.genre.genrename}"></c:out></p>
+    <p><audio controls>
+	        <source src="${song.filepath}" type="${song.contentType}"></source>
+        </audio></p>
    </div> 
     </body>
     </html>

@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" type="text/css" href="css/FirstPage.css" >
+	<link rel="shortcut icon" href="<%=basePath %>images/logo2.png">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -64,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		       </c:when>
 		       <c:otherwise>
 		         <c:out value="${user.username}"></c:out>欢迎您!
-		         <a href="song/song_showSong">显示所有歌曲</a>  
+		          &nbsp;<a href="song/song_showSong">显示所有歌曲</a> &nbsp;<a href="singer/singer_showSinger">查看所有歌手</a> 
 		       </c:otherwise>
 		    </c:choose>
   

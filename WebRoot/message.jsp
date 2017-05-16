@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<meta http-equiv="Refresh" content="1;url=song/song_showSong">
 	<link href="css/style1.css"rel="stylesheet"type="text/css">
+	<link rel="shortcut icon" href="<%=basePath %>images/logo.png">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->

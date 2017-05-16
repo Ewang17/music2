@@ -70,5 +70,14 @@ public class SongDao {
     	List songList = q.list();
     	return (ArrayList<Song>) songList;
     }
+    public ArrayList<Song> QuerySongsInfoBySinger(String singername) {
+    	Session s = factory.getCurrentSession();
+    	String hql = "From Song song where 1=1";
+    	if(null != singername) 
+    		hql = hql + " and song.singer.singername like '%" + singername + "%'";
+    	Query q = s.createQuery(hql);
+    	List songList = q.list();
+    	return (ArrayList<Song>) songList;
+    }
 
 }
